@@ -1,6 +1,3 @@
-## Put comments here that give an overall description of what your
-## functions do
-
 
 ## creates a special "matrix" object that can cache its inverse
 makeCacheMatrix <- function(x = matrix()) {
@@ -20,6 +17,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ## cache the solve result if not previosuly calculated
+## Return a matrix that is the inverse of 'x'
 cacheSolve <- function(x, ...) {
         
     m <- x$getsolve()
@@ -29,7 +27,7 @@ cacheSolve <- function(x, ...) {
     }
     data <- x$get()
     
-    ## Return a matrix that is the inverse of 'x'
+
     m <- solve(data, ...)
     x$setsolve(m)
     m
